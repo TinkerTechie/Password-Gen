@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Password Generator</title>
+</head>
+<body>
+  <h2>Password Generator</h2>
+  <input type="number" id="len" placeholder="Enter length" />
+  <button onclick="generate()">Generate</button>
+  <p id="out"></p>
+
+  <script>
+    function generate() {
+      const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
+      const length = document.getElementById("len").value;
+      let pass = "";
+      for (let i = 0; i < length; i++) {
+        pass += chars[Math.floor(Math.random() * chars.length)];
+      }
+      document.getElementById("out").innerText = pass;
+    }
+  </script>
+</body>
+</html>
